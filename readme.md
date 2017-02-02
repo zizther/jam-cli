@@ -1,6 +1,6 @@
 # Jam CLI
 
-This is the command-line interface for [Jam](http://getjam.io) . It downloads and installs the front-end boilerplate and the optional Vue JS setup.
+This is the command-line interface for [Jam](http://getjam.io). It downloads and installs the front-end boilerplate and the optional Vue JS setup.
 
 ## Requirements
 
