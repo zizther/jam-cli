@@ -1,0 +1,46 @@
+<!doctype html>
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en">  <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+</head>
+<body>
+    <!-- This file was created by Yeoman, because the option to create with Backbone-requirejs was on -->
+    <!-- It contains the example markup for to load Require.js into the page and pass extra configuration -->
+
+    <div id="fb-root"></div>
+    <div id="app_loader">Loading...</div>
+
+    <% for (var i in scaffoldRoutes) { %><a href="<%= scaffoldRoutes[i] %>" data-internal="true"><%= scaffoldRoutes[i] %></a>
+<% } %>
+
+    <hr>
+
+    <% for (var i in scaffoldRoutes) { %><section id="<%= scaffoldRoutes[i] %>" style="display:none">
+        <h1><%= scaffoldRoutes[i] %></h1>
+    </section>
+<% } %>
+
+    <script type="text/javascript">
+    var preventJsCaching = false; // Set to true in development
+
+    window.requireJsConfig = {
+        // Per-file configuration
+        config: {
+            'app/app': {
+                'analyticsAccountId': 'abcdef123456'
+            }<% if (useMaidoJs) { %>,
+            'lib/facebook/user': {
+                'appId': '0123456789'
+            }<% } %>
+        },
+        urlArgs: preventJsCaching ? 'bust=' + (new Date()).getTime() : ''
+    };
+    </script>
+    <script type="text/javascript" data-main="assets/js/src/main.js" src="bower_components/requirejs/require.js"></script>
+</body>
+</html>
